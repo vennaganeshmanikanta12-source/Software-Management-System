@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+<div class="login-card">
+  <div class="brand-mark">SMS</div>
+  <h1>Software Management System</h1>
+  <p>Manage employees, projects, teams, sprints, tasks and bugs.</p>
+  <button class="primary-btn" onclick="enterDashboard()">Open Dashboard</button>
+  <div id="connection" class="connection">Checking MySQL connection...</div>
+</div>
+<script>
+async function checkConnection(){
+  const el = document.getElementById("connection");
+  try {
+    const r = await fetch("/api/health");
+    const d = await r.json();
+    el.textContent = d.connected ? "● MySQL connected" : "● MySQL connection failed";
+    el.className = "connection " + (d.connected ? "ok" : "bad");
+  } catch(e) {
+    el.textContent = "● Server is not running";
+    el.className = "connection bad";
+  }
+}
+function enterDashboard(){ location.href = "dashboard.html"; }
+checkConnection();
+</script>
+</body>
+</html>

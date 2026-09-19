@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard | SMS</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="logo">SMS</div>
+  <div class="side-title">Software Management</div>
+  <nav>
+    <a class="active" href="dashboard.html">Dashboard</a>
+    <a href="employees.html">Employees</a>
+    <a href="projects.html">Projects</a>
+    <a href="teams.html">Teams</a>
+    <a href="sprints.html">Sprints</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="bugs.html">Bugs</a>
+    <a href="clients.html">Clients</a>
+  </nav>
+</aside>
+<main class="main">
+  <header><div><h1>Dashboard</h1><p>Live data from MySQL</p></div><span id="status" class="pill">Checking...</span></header>
+  <section class="cards">
+    <div class="stat"><span>Employees</span><strong id="employees">-</strong></div>
+    <div class="stat"><span>Projects</span><strong id="projects">-</strong></div>
+    <div class="stat"><span>Teams</span><strong id="teams">-</strong></div>
+    <div class="stat"><span>Tasks</span><strong id="tasks">-</strong></div>
+    <div class="stat"><span>Open Bugs</span><strong id="bugs">-</strong></div>
+  </section>
+  <section class="grid2">
+    <div class="panel"><h2>Work Overview</h2>
+      <div class="metric"><span>Active Tasks</span><b id="activeTasks">-</b></div>
+      <div class="metric"><span>Open / In Progress Bugs</span><b id="openBugs">-</b></div>
+    </div>
+    <div class="panel"><h2>Quick Access</h2>
+      <div class="quick">
+        <a href="employees.html">Employees</a><a href="projects.html">Projects</a>
+        <a href="tasks.html">Tasks</a><a href="bugs.html">Bugs</a>
+      </div>
+    </div>
+  </section>
+</main>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
